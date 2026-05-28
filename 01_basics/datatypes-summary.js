@@ -52,3 +52,38 @@ console.log(typeof myFunction);//function
 // Functions are actually special objects in JS.
 // Since functions are callable objects, typeof gives "function"
 // instead of generic "object".
+
+//Stack(primitive) vs Heap(non-primitive):
+//Primitive values are stored in the stack, which is a simple memory structure.
+//Non-primitive values (objects, arrays, functions) are stored in the heap, which is a more complex memory area.
+//When you assign a primitive value to a variable, it holds the actual value.
+//When you assign a non-primitive value to a variable, it holds a reference (pointer) to the location in the heap where the value is stored.
+
+let myName="Daksh";
+let anotherName=myName;
+console.log(myName); //Daksh
+console.log(anotherName); //Daksh
+myName="Rohit";
+console.log(myName); //Rohit
+console.log(anotherName); //Daksh (unchanged, because it's a copy of the value)
+
+let myObj1={
+    name:"Daksh",
+    age:23
+}
+let anotherObj=myObj1;
+myObj1.age=24;
+console.log(myObj1); //{name: "Daksh", age: 24}
+console.log(anotherObj); //{name: "Daksh", age: 24} (changed, because it's a reference to the same object)
+
+// Stack vs Heap Memory:
+
+// Primitive datatypes (String, Number, Boolean, Null, Undefined, Symbol, BigInt)
+// -> Stored in Stack
+// -> Copy of value is passed
+// -> Changes do NOT affect original variable
+
+// Non-primitive / Reference types (Object, Array, Function)
+// -> Stored in Heap
+// -> Stack stores reference (address) to heap memory
+// -> Reference is shared, so changes can affect original data

@@ -24,7 +24,7 @@ console.log(str1+str2);
 console.log(1+"2");
 console.log("1"+2);
 console.log("1"+2+2);
-
+ 
 //1=>true;0=>false
 //""=>false
 //"daksh"=>true
