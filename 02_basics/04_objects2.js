@@ -42,7 +42,24 @@ const users=[
 ]
 users[1].name
 
-console.log(Object.keys(tinderUser))//this will give us the keys of the object
-console.log(Object.values(tinderUser))
-console.log(Object.entries(tinderUser)) 
-console.log(tinderUser.hasOwnProperty("name"))//this will check if the object has the property or not
+// console.log(Object.keys(tinderUser))//this will give us the keys of the object
+// console.log(Object.values(tinderUser))
+// console.log(Object.entries(tinderUser)) 
+// console.log(tinderUser.hasOwnProperty("name"))//this will check if the object has the property or not
+
+const course={
+    coursename:"JavaScript",
+    price:999,
+    courseInstructor:"John Doe" 
+}
+//course.courseInstructor
+
+const {courseInstructor: instructor}=course//this is called object destructuring
+//Object destructuring is a JavaScript syntax that lets you extract properties from an object into separate variables in a concise way.
+console.log(instructor)
+
+// {
+//     "name":"John",
+//     "age":30,
+//     "city":"New York"
+// }JSON data
