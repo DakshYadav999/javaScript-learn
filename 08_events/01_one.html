@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color: black;">
+    <h2 style="color:blanchedalmond">Elden Ring Views</h2>
+    <div>
+        <ul id="images">
+    <li>
+        <img id="shamanVillage"
+             src="https://i.redd.it/shaman-village-is-beautiful-best-area-in-this-dlc-v0-ijtnm3pi8azd1.jpg?width=3840&format=pjpg&auto=webp&s=bb3f9f1a6cc503cc33a4e13c02d3282c30426fd3"
+             alt="Shaman Village"
+             width="800">
+    </li>
+
+    <li>
+        <img id="flowerField"
+             src="https://preview.redd.it/straight-up-almost-cried-when-i-found-it-what-area-is-most-v0-rj0lmxot2phd1.jpeg?width=1920&format=pjpg&auto=webp&s=bf8047c0d1b5546162fe366b308f9781abeb7375"
+             alt="Shadow Realm Flower Field"
+             width="800">
+    </li>
+
+    <li>
+        <img id="ceruleanCoast"
+             src="https://static0.srcdn.com/wordpress/wp-content/uploads/2024/06/cerulean-cropped.jpg?q=49&fit=crop&w=825&dpr=2"
+             alt="Cerulean Coast"
+             width="800">
+    </li>
+
+    <li>
+        <img id="jaggedPeak"
+             src="https://i.redd.it/whats-your-most-liked-and-least-liked-location-in-the-dlc-v0-obqsp60ly1ed1.jpg?width=1920&format=pjpg&auto=webp&s=8368e34eb2968bbc7e0ece13c1a00d37d1408373"
+             href="https://google.com"
+             alt="Jagged Peak"
+             width="800">
+    </li>
+
+    <li>
+        <img id="enirIlim"
+             src="https://cdn.mos.cms.futurecdn.net/UmGwsSViwoPep4xskvpakA.jpg"
+             alt="Enir-Ilim"
+             width="800">
+    </li>
+
+    <li>
+        <img id="liurniaView"
+             src="https://i.redd.it/5jcerpfsrek91.jpg"
+             alt="Beautiful Elden Ring View"
+             width="800">
+    </li>
+
+    <li>
+        <img id="shadowKeep"
+             src="https://i.redd.it/the-shadow-keep-looks-like-a-masterpiece-on-the-outside-but-v0-tgnutld036ie1.png?width=1920&format=png&auto=webp&s=8251c8d72c6673a6f15aea2fd0b4186926362b38"
+             alt="Shadow Keep"
+             width="800">
+    </li>
+</ul> style="background-color: black;"
+    </div>
+</body>
+<script>
+    // document.getElementById('shamanVillage').onclick=function(){
+    //     alert("Shaman Village")
+    // }
+
+    //attachEvent()
+    //jQuery-on
+
+    // document.getElementById('shamanVillage').addEventListener('click',function(e){
+    //     // alert("Shaman Village")
+    //     console.log("Shaman Village Clicked")
+    //     e.stopPropagation(e)
+    // },false)
+
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     // alert("Images Clicked")
+    //     console.log("Images Clicked")
+    // },false)
+
+    //  document.getElementById('jaggedPeak').addEventListener('click',function(e){
+    //     // alert("jaggedPeak")
+    //     console.log("jaggedPeak Clicked")
+    //     e.preventDefault()
+    //      e.stopPropagation(e)
+    // },false)
+
+    document.querySelector('#images').addEventListener('click',function(e){
+        // console.log(e.target.parentNode)
+        console.log(e.target.tagName)
+        if(e.target.tagName==='IMG'){
+            console.log(e.target.id)
+            let removeIt=e.target.parentNode
+            removeIt.remove()
+        }
+
+       
+        // removeIt.parentNode.removeChild(removeIt)
+    })
+    //type,timestamp,defaultPrevented
+    //target,toElement,srcElement,currentTarget
+    //clientX,clientY,screenX,screenY,offset
+    //altkey,ctrlkey,shiftkey,keyCode
+    
+    //event capturing(true) and event bubbling(false) inme jab capturing mein krte to babhar se andar event track hote hai like images clicked then shaman clicked and in bubbling form isndie to outside like shaman clicked then images clicked*****************************************
+</script>
+</html>
