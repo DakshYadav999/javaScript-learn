@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <button id="stop">Stop</button>
+    
+</body>
+<script>
+    // setTimeout(function(){
+    //    console.log("Daksh");
+    // },2000)
+    const sayDaksh=function(){
+        console.log("Daksh")
+    }
+    setTimeout(sayDaksh,2000)
+
+    const changeText=function(){
+        document.querySelector('h1').innerHTML='Hello Tarnished'
+    }
+    const changeMe=setTimeout(changeText,2000)
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearInterval(changeMe)
+        console.log("Stopped")
+    })
+</script>
+</html>
+
+<!-- /*
+setTimeout()
+------------
+Runs a function ONCE after a specified delay.
+
+Example:
+const timeoutId = setTimeout(fn, 2000);
+
+------------------------------------------------
+
+clearTimeout()
+--------------
+Cancels a timeout before it executes.
+
+Example:
+clearTimeout(timeoutId);
+
+------------------------------------------------
+
+setInterval()
+-------------
+Runs a function REPEATEDLY after every specified interval.
+
+Example:
+const intervalId = setInterval(fn, 1000);
+
+------------------------------------------------
+
+clearInterval()
+---------------
+Stops an interval created by setInterval().
+
+Example:
+clearInterval(intervalId);
+
+------------------------------------------------
+
+Key Difference:
+- setTimeout() -> Executes once.
+- setInterval() -> Executes repeatedly.
+*/ -->

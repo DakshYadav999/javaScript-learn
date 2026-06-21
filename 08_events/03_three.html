@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>yupYup</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    
+</body>
+<script>
+    const sayDate=function(str){
+        console.log(str,Date.now())
+    }
+    let intervalId=null
+    document.querySelector('#start').addEventListener('click',function(){
+       if(!intervalId){
+        intervalId=setInterval(sayDate,1000,"hi")
+        console.log("Started")
+       }
+    })
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearInterval(intervalId)
+        intervalID=null
+        console.log("Stopped")
+    })
+</script>
+</html>
+
+<!-- /*
+What we learned about setInterval and clearInterval:
+
+1. setInterval() starts executing immediately when called and returns an interval ID.
+2. To stop an interval later, we must store that ID in a variable and pass it to clearInterval().
+3. Initially, the interval was being created directly, so it started running as soon as the page loaded.
+4. We moved setInterval() inside the Start button's click handler so it only starts when the user clicks Start.
+5. A new issue appeared: clicking Start multiple times created multiple intervals.
+6. Since intervalId only stores the most recent ID, clearInterval(intervalId) would stop only the latest interval while older ones kept running.
+7. We fixed this by:
+   - Initializing intervalId as null.
+   - Creating a new interval only if one is not already running.
+   - Setting intervalId back to null after stopping the interval.
+
+Result:
+- Start starts the interval once.
+- Multiple Start clicks do not create extra intervals.
+- Stop correctly stops the running interval.
+*/ -->
