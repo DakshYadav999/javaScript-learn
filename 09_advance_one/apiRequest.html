@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Card</title>
+
+    <style>
+        body{
+            background-color:black;
+            color:white;
+            font-family:Arial, sans-serif;
+        }
+
+        .profile-card{
+            width:300px;
+            border:1px solid white;
+            border-radius:15px;
+            padding:20px;
+            margin-top:20px;
+            background-color:#1e1e1e;
+        }
+
+        .profile-header{
+            display:flex;
+            align-items:center;
+            gap:15px;
+        }
+
+        .profile-header img{
+            width:100px;
+            height:100px;
+            border-radius:50%;
+        }
+
+        .profile-info{
+            font-size:18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Hello</h2>
+
+    <button id="displayID">Start</button>
+
+    <div id="card"></div>
+
+</body>
+
+<script>
+    const requestURL='https://api.github.com/users/DakshYadav999'
+
+    const xhr=new XMLHttpRequest()
+
+    xhr.open('GET',requestURL)
+
+    let data
+
+    xhr.onreadystatechange=function(){
+
+        if(xhr.readyState===4 && xhr.status===200){
+
+            data=JSON.parse(this.responseText)
+
+            console.log(data.followers)
+
+        }
+    }
+
+    xhr.send()
+
+    const card=document.querySelector('#card')
+
+    document.querySelector('#displayID').addEventListener('click',function(){
+
+        if(!data){
+            card.innerHTML="<p>Loading...</p>"
+            return
+        }
+
+        card.innerHTML=`
+            <div class="profile-card">
+
+                <div class="profile-header">
+
+                    <img src="${data.avatar_url}" alt="Profile Picture">
+
+                    <div class="profile-info">
+                        <h3>${data.login}</h3>
+                        <p>My GitHub Profile Picture</p>
+                    </div>
+
+                </div>
+
+                <p>Followers: ${data.followers}</p>
+
+                <p>Public Repositories: ${data.public_repos}</p>
+
+            </div>
+        `
+    })
+
+</script>
+</html>
