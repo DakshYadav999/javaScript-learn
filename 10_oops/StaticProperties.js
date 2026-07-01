@@ -23,4 +23,4 @@ class Teacher extends User{
 }
 
 const hello=new Teacher("Hello","hello@example.com")
-console.log(hello.createID())
+// console.log(hello.createID())
