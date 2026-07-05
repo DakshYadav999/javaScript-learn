@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body style="background-color:#313131">
+    <button id="orange">Orange</button>
+    <button id="Green"></button>
+</body>
+<script>
+    //function init(){
+    //    let name="Mozilla"; // name is a local variable created by init
+    //    function displayName(){ // displayName() is the inner function, a closure
+    //        console.log(name); // use variable declared in the parent function
+    //    }
+    //    displayName();
+    //}
+    //init();
+
+    //function outer(){
+    //    let username="Daksh"
+    //    function inner(){
+    //        console.log("Inner function:",username)
+    //    }
+    //    inner()
+    //}
+    //outer()
+    //console.log("Out of function",username) 
+
+    //function makeFunc(){
+    //    const name="Daksh"
+    //    function displayName(){
+    //        console.log(name)
+    //    }
+    //    return displayName
+    //}
+    //const myFunc=makeFunc()
+    //myFunc()
+
+// Closures:A closure is a function that remembers and can access variables from its outer function even after the outer function has finished executing.
+// displayName() remembers the variable 'name' even after makeFunc() has finished executing.
+// makeFunc() returns the function, not the value.
+// The returned function (myFunc) keeps a reference to its outer scope (lexical scope),
+// so when myFunc() is called later, it can still access and print "Daksh".
+</script>
+<script>
+    //document.getElementById("orange").addEventListener("click", function() {
+    //    document.body.style.backgroundColor = "orange";
+    //});
+
+    //document.getElementById("Green").addEventListener("click",function(){
+    //    document.body.style.backgroundColor="green"
+    //})
+    function clickHandler(color){
+        //document.body.style.backgroundColor=`${color}`
+        return function(){
+            document.body.style.backgroundColor=`${color}` 
+        }
+    }
+    
+    document.getElementById("orange").onClick= clickHandler("orange")
+</script>
+</html>
